@@ -1,5 +1,6 @@
 void menu(){
     //please enter the choice
+    printf("Please enter the choice \n");
     printf("1:: Add record\n");
     printf("2:: Search record\n");
     printf("3:: Modifier record\n");
@@ -8,7 +9,7 @@ void menu(){
     printf("6:: Exit\n");
     // Enter  choice
     int choice;
-    printf("Enter you choice \n");
+    printf("Enter you choice: ");
     scanf("%d", &choice);
     switch(choice){
     case 1:
