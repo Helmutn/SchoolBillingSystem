@@ -24,50 +24,79 @@
 
 #define DATA_SIZE 4096 // Maximum number of data (Student and teacher)
 
+#define PATH "data_base_school_system.txt" // File name to save the data locally.
+
 /**
 * @struct
 */
-struct student
+typedef struct
 {
 	int identifier;
 	char* name;
 	char* l_class;
 	float note;
 	double fee;
-};
+} STUDENT;
 
 /**
 * @struct
 */
-struct teacher
+typedef struct
 {
 	int identifier;
 	char* name;
 	char* l_class;
 	char grad;
 	double salary;
+} TEACHER;
+
+/**
+* @brief 
+*/
+struct student_set
+{
+	int nbr_of_student;
+	STUDENT std_list[DATA_SIZE];
 };
+
+/**
+* @brief 
+*/
+struct teacher_set
+{
+	int nbr_of_teacher;
+	TEACHER tea_list[DATA_SIZE];
+};
+
+struct student_set all_student; // Global variable to store all students.
+struct teacher_set all_teacher; // Global variable to store all teachers.
+
+/* */
+void loadDat();
+
+/* */
+void saveDat();
 
 /* */
 void menu();
 
 /* */
-void recordDat();
+void recordDat(char *data);
 
 /* */
-void checkDat();
+char checkDat(char *data)
 
 /* */
-void addDat();
+int addDat(char *data)
 
 /* */
-void searchDat();
+int searchDat(int identifier)
 
 /* */
-void modifyDat();
+int modifyDat(int identifier)
 
 /* */
-void deleteDat();
+int deleteDat(int identifier)
 
 /* */
 void exit();
